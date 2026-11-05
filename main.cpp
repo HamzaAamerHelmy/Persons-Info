@@ -33,7 +33,6 @@ struct stPersonalData
 
 struct stPersonInfo
 {
-    int numberOfPersons;
     stPersonalData personalData;
 };
 
@@ -86,28 +85,23 @@ stPersonalData readPersonalData()
     return personalData;
 }
 
-stPersonInfo StartGame()
+void StartGame(stPersonInfo personInfo[])
 {
-    stPersonInfo personInfo;
+    int numberOfPersons = readNumberOfPersons();
 
-    personInfo.numberOfPersons = readNumberOfPersons();
     cin.ignore();
 
-    for (int i = 0; i < personInfo.numberOfPersons - 1; i++)
+    for (int i = 0; i < numberOfPersons - 1; i++)
     {
-        
+        personInfo[i].personalData = readPersonalData();
     }
-    
-    personInfo.personalData = readPersonalData();
-
-    return personInfo;
 }
 
 void RunApp()
 {
     stPersonInfo personInfo;
 
-    personInfo = StartGame();
+    StartGame(personInfo);
 }
 
 int main()
