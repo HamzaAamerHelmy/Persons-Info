@@ -3,7 +3,7 @@
 #include <cstdlib>
 using namespace std;
 
-void sleep(int seconds)
+void mySleep(int seconds)
 {
     Sleep(seconds * 1000);
 }
@@ -52,7 +52,7 @@ int readNumberOfPersons()
         {
             cout << "Wrong Input ..." << endl;
             cout << "Please Enter a vaild number!" << endl;
-            sleep(1);
+            mySleep(1);
             clearScreen();
         }
     } while (numberOfPersons > 30);
@@ -62,6 +62,8 @@ int readNumberOfPersons()
 
 stPersonalData readPersonalData()
 {
+    clearScreen();
+
     stPersonalData personalData;
 
     cout << "****************************************" << endl;
@@ -93,6 +95,9 @@ void StartGame(stPersonInfo personInfo[], int numberOfPersons)
     for (int i = 0; i < numberOfPersons; i++)
     {
         personInfo[i].personalData = readPersonalData();
+        cout << "\nThe Next Person will enter Now ..." << endl << endl;
+        mySleep(2);
+        clearScreen();
     }
 }
 
