@@ -87,6 +87,8 @@ stPersonalData readPersonalData()
 
     cin.ignore();
 
+    cout << "****************************************" << endl;
+
     return personalData;
 }
 
