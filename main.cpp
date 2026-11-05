@@ -57,13 +57,15 @@ int readNumberOfPersons()
         }
     } while (numberOfPersons > 30);
 
+    cout << "Person(s) will enter now ..." << endl;
+    mySleep(1);
+    clearScreen();
+
     return numberOfPersons;
 }
 
 stPersonalData readPersonalData()
 {
-    clearScreen();
-
     stPersonalData personalData;
 
     cout << "****************************************" << endl;
@@ -97,7 +99,8 @@ void StartGame(stPersonInfo personInfo[], int numberOfPersons)
     for (int i = 0; i < numberOfPersons; i++)
     {
         personInfo[i].personalData = readPersonalData();
-        cout << "\nThe Next Person will enter Now ..." << endl << endl;
+        cout << "\nThe Next Person will enter Now ..." << endl
+             << endl;
         mySleep(2);
         clearScreen();
     }
@@ -110,7 +113,6 @@ void RunApp()
     cin.ignore();
 
     stPersonInfo personInfo[numberOfPersons];
-
 
     StartGame(personInfo, numberOfPersons);
 }
