@@ -83,6 +83,8 @@ stPersonalData readPersonalData()
     cin >> fC;
     personalData.favoriteColor = (enFavoriteColor)fC;
 
+    cin.ignore();
+
     return personalData;
 }
 
