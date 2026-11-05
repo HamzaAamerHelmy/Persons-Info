@@ -98,6 +98,8 @@ void RunApp()
 {
     int numberOfPersons = readNumberOfPersons();
 
+    cin.ignore();
+
     stPersonInfo personInfo[numberOfPersons];
 
 
