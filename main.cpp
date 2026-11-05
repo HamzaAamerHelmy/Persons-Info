@@ -60,30 +60,30 @@ int readNumberOfPersons()
     return numberOfPersons;
 }
 
-stPersonInfo readPersonalData()
+stPersonalData readPersonalData()
 {
-    stPersonInfo personInfo;
+    stPersonalData personalData;
 
     cout << "****************************************" << endl;
     cout << "Enter The Name: ";
-    getline(cin, personInfo.personalData.name);
+    getline(cin, personalData.name);
 
     cout << "\nEnter The Age: ";
-    cin >> personInfo.personalData.age;
+    cin >> personalData.age;
     cin.ignore();
 
     cout << "\nEnter The Email: ";
-    getline(cin, personInfo.personalData.email);
+    getline(cin, personalData.email);
 
     cout << "\nEnter The Phone Number: ";
-    cin >> personInfo.personalData.phoneNumber;
+    cin >> personalData.phoneNumber;
 
     cout << "\nEnter The Favorite Color (blue = 1, yellow = 2, green = 3, rose = 4, red = 5): ";
     int fC = 0;
     cin >> fC;
-    personInfo.personalData.favoriteColor = (enFavoriteColor)fC;
+    personalData.favoriteColor = (enFavoriteColor)fC;
 
-    return personInfo;
+    return personalData;
 }
 
 stPersonInfo StartGame()
@@ -91,14 +91,23 @@ stPersonInfo StartGame()
     stPersonInfo personInfo;
 
     personInfo.numberOfPersons = readNumberOfPersons();
-    personInfo = readPersonalData();
+    cin.ignore();
+
+    for (int i = 0; i < personInfo.numberOfPersons - 1; i++)
+    {
+        
+    }
+    
+    personInfo.personalData = readPersonalData();
+
+    return personInfo;
 }
 
 void RunApp()
 {
     stPersonInfo personInfo;
 
-    personInfo = StartGame();    
+    personInfo = StartGame();
 }
 
 int main()
