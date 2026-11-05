@@ -45,7 +45,8 @@ int readNumberOfPersons()
         cout << "****************************************" << endl;
         cout << "Enter Number Of Persons (Max 30) : ";
         cin >> numberOfPersons;
-        cout << "****************************************" << endl << endl;
+        cout << "****************************************" << endl
+             << endl;
 
         if (numberOfPersons > 30)
         {
@@ -85,13 +86,9 @@ stPersonalData readPersonalData()
     return personalData;
 }
 
-void StartGame(stPersonInfo personInfo[])
+void StartGame(stPersonInfo personInfo[], int numberOfPersons)
 {
-    int numberOfPersons = readNumberOfPersons();
-
-    cin.ignore();
-
-    for (int i = 0; i < numberOfPersons - 1; i++)
+    for (int i = 0; i < numberOfPersons; i++)
     {
         personInfo[i].personalData = readPersonalData();
     }
@@ -99,9 +96,12 @@ void StartGame(stPersonInfo personInfo[])
 
 void RunApp()
 {
-    stPersonInfo personInfo;
+    int numberOfPersons = readNumberOfPersons();
 
-    StartGame(personInfo);
+    stPersonInfo personInfo[numberOfPersons];
+
+
+    StartGame(personInfo, numberOfPersons);
 }
 
 int main()
