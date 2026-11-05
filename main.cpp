@@ -14,6 +14,8 @@ struct stPersonalData
 {
     string name;
     int age;
+    int phoneNumber;
+    string email;
 };
 
 struct stPersonInfo
