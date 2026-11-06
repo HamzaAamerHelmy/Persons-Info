@@ -74,7 +74,6 @@ stPersonalData readPersonalData()
 
     cout << "\nEnter The Age: ";
     cin >> personalData.age;
-    cin.ignore();
 
     cout << "\nEnter The Email: ";
     cin >> personalData.email;
