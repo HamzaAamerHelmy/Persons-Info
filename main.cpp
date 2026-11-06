@@ -151,6 +151,11 @@ void StartGame(stPersonInfo personInfo[], int numberOfPersons)
         mySleep(2);
         clearScreen();
     }
+    for (int i = 0; i < numberOfPersons; i++)
+    {
+        /* code */
+    }
+    
 }
 
 void RunApp()
