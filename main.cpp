@@ -99,8 +99,7 @@ void StartGame(stPersonInfo personInfo[], int numberOfPersons)
     for (int i = 0; i < numberOfPersons; i++)
     {
         personInfo[i].personalData = readPersonalData();
-        cout << "\nThe Next Person will enter Now ..." << endl
-             << endl;
+        cout << "\nThe Next Person will enter Now ..." << endl << endl;
         mySleep(2);
         clearScreen();
     }
