@@ -77,7 +77,7 @@ stPersonalData readPersonalData()
     cin.ignore();
 
     cout << "\nEnter The Email: ";
-    getline(cin, personalData.email);
+    cin >> personalData.email;
 
     cout << "\nEnter The Phone Number: ";
     cin >> personalData.phoneNumber;
@@ -98,6 +98,7 @@ void StartGame(stPersonInfo personInfo[], int numberOfPersons)
 {
     for (int i = 0; i < numberOfPersons; i++)
     {
+        cout << "Person " << i + 1 << endl << endl;
         personInfo[i].personalData = readPersonalData();
         cout << "\nThe Next Person will enter Now ..." << endl << endl;
         mySleep(2);
