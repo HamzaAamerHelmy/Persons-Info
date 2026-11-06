@@ -1,6 +1,5 @@
 #include <iostream>
 #include <windows.h>
-#include <cstdlib>
 using namespace std;
 
 void mySleep(int seconds)
@@ -64,7 +63,7 @@ int readNumberOfPersons()
     return numberOfPersons;
 }
 
-stPersonalData readPersonalData()
+stPersonalData readPersonData()
 {
     stPersonalData personalData;
 
@@ -134,12 +133,12 @@ void printPersonData(stPersonalData personalData)
     cout << "****************************************" << endl;
 }
 
-void StartGame(stPersonInfo personInfo[], int numberOfPersons)
+void readPersonsData(stPersonInfo personInfo[], int numberOfPersons, string personText)
 {
     for (int i = 0; i < numberOfPersons; i++)
     {
-        cout << "Person " << i + 1 << endl << endl;
-        personInfo[i].personalData = readPersonalData();
+        cout << personText << i + 1 << endl << endl;
+        personInfo[i].personalData = readPersonData();
         if (i >= numberOfPersons - 1)
         {
             cout << "Saving ..." << endl;
@@ -151,11 +150,27 @@ void StartGame(stPersonInfo personInfo[], int numberOfPersons)
         mySleep(2);
         clearScreen();
     }
+}
+
+void printPersonsData(stPersonInfo personInfo[], int numberOfPersons, string personText)
+{
+    cout << "================================================" << endl << endl;
     for (int i = 0; i < numberOfPersons; i++)
     {
-        /* code */
+        cout << personText << i + 1 << endl << endl;
+
+        printPersonData(personInfo[i].personalData);
     }
+    cout << "================================================" << endl << endl;
+}
+
+void StartGame(stPersonInfo personInfo[], int numberOfPersons)
+{
+    string personText = "Person ";
     
+    readPersonsData(personInfo, numberOfPersons, personText);
+
+    printPersonsData(personInfo, numberOfPersons, personText);
 }
 
 void RunApp()
