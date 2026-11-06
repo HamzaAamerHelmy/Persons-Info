@@ -112,7 +112,6 @@ string getFavoriteColorText(enFavoriteColor favoriteColor)
 
 void printPersonData(stPersonalData personalData)
 {
-    cout << "==============================================" << endl << endl;
     cout << "****************************************" << endl;
     cout << "The Full Name: " << personalData.name << endl << endl;
     cout << "The Age: " << personalData.age << endl << endl;
