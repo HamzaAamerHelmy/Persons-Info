@@ -93,6 +93,11 @@ stPersonalData readPersonalData()
     return personalData;
 }
 
+void printPersonData(stPersonalData personalData)
+{
+    cout << 
+}
+
 void StartGame(stPersonInfo personInfo[], int numberOfPersons)
 {
     for (int i = 0; i < numberOfPersons; i++)
@@ -101,6 +106,9 @@ void StartGame(stPersonInfo personInfo[], int numberOfPersons)
         personInfo[i].personalData = readPersonalData();
         if (i >= numberOfPersons - 1)
         {
+            cout << "Saving ..." << endl;
+            mySleep(2);
+            clearScreen();
             return;
         }
         cout << "\nThe Next Person will enter Now ..." << endl << endl;
