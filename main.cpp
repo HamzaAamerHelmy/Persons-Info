@@ -81,7 +81,7 @@ stPersonalData readPersonData()
     cin >> personalData.phoneNumber;
 
     int fC = 0;
-    
+
     while (fC > 5 || fC < 1)
     {
         cout << "\nEnter The Favorite Color (blue = 1, yellow = 2, green = 3, rose = 4, red = 5): ";
@@ -143,7 +143,7 @@ void readPersonsData(stPersonInfo personInfo[], int numberOfPersons, string pers
         personInfo[i].personalData = readPersonData();
         if (i >= numberOfPersons - 1)
         {
-            cout << "Saving ..." << endl;
+            cout << "\nSaving ..." << endl;
             mySleep(2);
             clearScreen();
             return;
