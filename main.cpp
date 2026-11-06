@@ -131,7 +131,7 @@ void printPersonData(stPersonalData personalData)
     cout << "The Email: " << personalData.email << endl << endl;
     cout << "The Phone Number: " << personalData.phoneNumber << endl << endl;
     cout << "The Favorite Color: " << getFavoriteColorText(personalData.favoriteColor) << endl;
-    cout << "****************************************" << endl;
+    cout << "****************************************" << endl << endl;
 }
 
 void readPersonsData(stPersonInfo personInfo[], int numberOfPersons, string personText)
