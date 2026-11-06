@@ -120,6 +120,7 @@ string getFavoriteColorText(enFavoriteColor favoriteColor)
     case enFavoriteColor::red:
         return "Red";
     }
+    return "Wrong";
 }
 
 void printPersonData(stPersonalData personalData)
