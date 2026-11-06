@@ -81,10 +81,23 @@ stPersonalData readPersonalData()
     cout << "\nEnter The Phone Number: ";
     cin >> personalData.phoneNumber;
 
-    cout << "\nEnter The Favorite Color (blue = 1, yellow = 2, green = 3, rose = 4, red = 5): ";
-    int fC = 0;
-    cin >> fC;
-    personalData.favoriteColor = (enFavoriteColor)fC;
+    while (personalData.favoriteColor > 5 || personalData.favoriteColor < 1)
+    {
+        cout << "\nEnter The Favorite Color (blue = 1, yellow = 2, green = 3, rose = 4, red = 5): ";
+        int fC = 0;
+        cin >> fC;
+
+        if (fC > 5 || fC < 1)
+        {
+            cout << "\nWrong Enter!" << endl;
+            cout << "Please Enter a valid number" << endl;
+            mySleep(2);
+            clearScreen();
+        }
+        
+
+        personalData.favoriteColor = (enFavoriteColor)fC;
+    }
 
     cin.ignore();
 
