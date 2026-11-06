@@ -80,10 +80,11 @@ stPersonalData readPersonData()
     cout << "\nEnter The Phone Number: ";
     cin >> personalData.phoneNumber;
 
-    while (personalData.favoriteColor > 5 || personalData.favoriteColor < 1)
+    int fC = 0;
+    
+    while (fC > 5 || fC < 1)
     {
         cout << "\nEnter The Favorite Color (blue = 1, yellow = 2, green = 3, rose = 4, red = 5): ";
-        int fC = 0;
         cin >> fC;
 
         if (fC > 5 || fC < 1)
