@@ -93,9 +93,33 @@ stPersonalData readPersonalData()
     return personalData;
 }
 
+string getFavoriteColorText(enFavoriteColor favoriteColor)
+{
+    switch (favoriteColor)
+    {
+    case enFavoriteColor::blue:
+        return "Blue";
+    case enFavoriteColor::yellow:
+        return "Yellow";
+    case enFavoriteColor::green:
+        return "Green";
+    case enFavoriteColor::rose:
+        return "Rose";
+    case enFavoriteColor::red:
+        return "Red";
+    }
+}
+
 void printPersonData(stPersonalData personalData)
 {
-    cout << 
+    cout << "==============================================" << endl << endl;
+    cout << "****************************************" << endl;
+    cout << "The Full Name: " << personalData.name << endl << endl;
+    cout << "The Age: " << personalData.age << endl << endl;
+    cout << "The Email: " << personalData.email << endl << endl;
+    cout << "The Phone Number: " << personalData.phoneNumber << endl << endl;
+    cout << "The Favorite Color: " << getFavoriteColorText(personalData.favoriteColor) << endl;
+    cout << "****************************************" << endl;
 }
 
 void StartGame(stPersonInfo personInfo[], int numberOfPersons)
